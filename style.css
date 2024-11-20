@@ -1,0 +1,181 @@
+/* Reset global de márgenes y rellenos */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Fuentes */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000; /* Fondo negro para elegancia */
+    color: #f2f2f2; /* Texto claro para contraste */
+    line-height: 1.6;
+}
+
+/* Encabezado */
+header {
+    background-color: #000; /* Fondo negro */
+    color: #d4af37; /* Dorado brillante */
+    padding: 30px 0;
+    text-align: center;
+    border-bottom: 4px solid #d4af37; /* Borde dorado en la parte inferior */
+}
+
+header h1 {
+    font-size: 3rem; /* Título grande y llamativo */
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Navegación */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 20px;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+nav ul li:last-child {
+    margin-right: 0; /* Eliminar margen en el último elemento */
+}
+
+nav ul li a {
+    color: #d4af37; /* Dorado brillante */
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: color 0.3s, transform 0.3s;
+}
+
+nav ul li a:hover {
+    color: #fff; /* Blanco brillante al hacer hover */
+    transform: scale(1.1); /* Aumentar tamaño al hacer hover */
+}
+
+/* Sección Principal */
+main {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #d4af37; /* Dorado brillante */
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.8;
+}
+
+/* Imagen responsiva */
+.responsive {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 30px 0;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra sutil para resaltar la imagen */
+}
+
+/* Columnas */
+.columnas {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px; /* Más espacio entre columnas */
+}
+
+.columna {
+    flex: 1;
+    min-width: 280px;
+}
+
+.columnas img {
+    width: 100%;
+    border-radius: 8px; /* Bordes redondeados suaves */
+    transition: transform 0.3s ease;
+}
+
+.columnas img:hover {
+    transform: scale(1.05); /* Efecto de aumento sutil al hacer hover */
+}
+
+/* Formulario de Reservas */
+form {
+    background-color: #333; /* Fondo gris oscuro para contraste */
+    padding: 30px;
+    border-radius: 8px;
+    border: 2px solid #d4af37; /* Borde dorado */
+}
+
+form input[type="text"],
+form input[type="number"],
+form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin: 10px 0;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+form input[type="submit"] {
+    background-color: #d4af37; /* Dorado brillante */
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form input[type="submit"]:hover {
+    background-color: #b38b2b; /* Dorado más oscuro al hacer hover */
+}
+
+/* Pie de página */
+footer {
+    background-color: #222; /* Fondo gris muy oscuro para elegancia */
+    color: #d4af37; /* Dorado brillante */
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2.5rem; /* Ajuste de tamaño de fuente en pantallas pequeñas */
+    }
+
+    nav ul li {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    .columnas {
+        flex-direction: column;
+    }
+
+    .columna {
+        margin-right: 0;
+    }
+}

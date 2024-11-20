@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurante Octava Maravilla</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Encabezado -->
+    <header>
+        <h1>Bienvenidos a Octava Maravilla</h1>
+        <nav>
+            <ul>
+                <li><a href="#seccion1">Nuestra Historia</a></li>
+                <li><a href="#seccion2">Menú</a></li>
+                <li><a href="#doble-columna">Especialidades</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#reservas">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección 1: Historia -->
+    <main>
+        <section id="seccion1">
+            <h2>Nuestra Historia</h2>
+            <p>Octava Maravilla es un restaurante de lujo que combina alta cocina y ambiente exclusivo. Fundado para ofrecer experiencias sensoriales únicas, cada plato celebra la fusión de tradición e innovación gastronómica.</p>
+            <img src="https://media.istockphoto.com/id/2149219718/es/foto/3d-render-of-cafe-restaurant-interior.jpg?s=1024x1024&w=is&k=20&c=ufwjk9frglqFG1fg8PIzSWflwwoVfsFUGjw0s6x93BA=" alt="Restaurante Interior" class="responsive">
+            <div class="texto-centrado">
+                SINCE 2022
+            </div>
+        </section>
+
+        <!-- Sección 2: Menú -->
+        <section id="seccion2">
+            <h2>Menú</h2>
+            <p>Descubre nuestra variedad de platos exquisitos.</p>
+            <ul>
+                <li>Entrante: Sopa de Mariscos</li>
+                <li>Plato Principal: Filete de Res a la Parrilla</li>
+                <li>Postre: Tarta de Tiramisu</li>
+            </ul>
+
+            <div class="columnas">
+                <div class="columna">
+                    <h3>Sopa de Mariscos</h3>
+                    <img src="https://cdn.pixabay.com/photo/2019/09/26/06/38/seafood-soup-4505211_1280.jpg" width="400" alt="Sopa de Mariscos" class="responsive">
+                    <p>Sabor fresco y profundo: un festín de mar en cada cucharada.</p>
+                </div>
+                <div class="columna">
+                    <h3>Filete de Res a la Parrilla</h3>
+                    <img src="https://cdn.pixabay.com/photo/2021/05/24/07/07/steak-6278031_960_720.jpg" width="400" alt="Filete de Res" class="responsive">
+                    <p>Jugoso filete de res a la parrilla, sazonado a la perfección.</p>
+                </div>
+                <div class="columna">
+                    <h3>Postre de Tiramisú</h3>
+                    <img src="https://cdn.pixabay.com/photo/2020/09/18/13/18/tiramisu-5581806_1280.jpg" width="400" alt="Tiramisú" class="responsive">
+                    <p>Clásico tiramisú con capas de suave crema de mascarpone.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección 3: Especialidades -->
+        <section id="doble-columna">
+            <h2>Especialidades</h2>
+            <div class="columnas">
+                <div class="columna">
+                    <h3>Platos Vegetarianos (Ratatouille)</h3>
+                    <img src="https://media.istockphoto.com/id/109727074/es/foto/ratatouille.jpg?s=612x612&w=0&k=20&c=Q5_Q0vWZ-DTdFDNxJXTMQ_Rr2YvUgQLFfrvMJknEy_0=" width="550" alt="Ratatouille" class="responsive">
+                    <p>Cada bocado es una explosión de frescura y sabor mediterráneo.</p>
+                </div>
+                <div class="columna">
+                    <h3>Delicias del Mar</h3>
+                    <img src="https://media.istockphoto.com/id/646483290/es/foto/pulpo-a-la-plancha-en-un-plato.jpg?s=1024x1024&w=is&k=20&c=MQ2OCvrI9uC81irlx53nG8TW-bwAEATDmyQJHV83yhs=" width="600" alt="Delicias del Mar" class="responsive">
+                    <p>Tierno y jugoso, con un toque ahumado y dorado, acompañado de papas al romero.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Reservas -->
+        <section id="reservas">
+            <h2>Reservas</h2>
+            <div class="container">
+                <form id="reservationForm">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+
+                    <label for="age">Edad:</label>
+                    <input type="number" id="age" required>
+
+                    <label for="phone">Teléfono:</label>
+                    <input type="text" id="phone" required>
+
+                    <input type="submit" value="Enviar">
+                </form>
+
+                <div id="output" class="output" style="display:none;">
+                    <h2>Datos de Reserva</h2>
+                    <p id="outputName"></p>
+                    <p id="outputAge"></p>
+                    <p id="outputPhone"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Pie de página -->
+    <footer id="contacto">
+        <p>Contacto: info@octavamravilla.com</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('reservationForm');
+        const output = document.getElementById('output');
+        const outputName = document.getElementById('outputName');
+        const outputAge = document.getElementById('outputAge');
+        const outputPhone = document.getElementById('outputPhone');
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const phone = document.getElementById('phone').value;
+
+            if (name && age >= 18 && phone) {
+                outputName.textContent = `Nombre: ${name}`;
+                outputAge.textContent = `Edad: ${age}`;
+                outputPhone.textContent = `Teléfono: ${phone}`;
+                output.style.display = 'block';
+                form.reset();
+            } else {
+                alert("Por favor, ingresa datos válidos y asegúrate de que tienes al menos 18 años.");
+            }
+        });
+    </script>
+</body>
+</html>
